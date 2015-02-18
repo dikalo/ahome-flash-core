@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+  <inherits name='com.ait.toolkit.core.Core'/>
+  <inherits name='com.ait.toolkit.flash.widget.Widget'/>
+  <inherits name='com.ait.toolkit.flash.core.detect.Detect'/>
+	<script src="swfobject-2.0.js"/> 
+	 <script src="FABridge.js"/>
+	 
+	  <define-linker name="swfstd" class="com.ait.toolkit.flash.linker.SwfIFrameLinker" />
+        <define-linker name="swfxs" class="com.ait.toolkit.flash.linker.SwfXSLinker" />
+        <define-linker name="swfsso" class="com.ait.toolkit.flash.linker.SwfSingleScriptLinker" />
+</module>

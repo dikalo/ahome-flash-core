@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+  <inherits name='com.emitrom.flash4j.widget.Widget'/>
+  <inherits name='com.emitrom.flash4j.core.detect.DetectMin'/>
+  
+   <define-linker name="swfstd" class="com.ait.toolkit.flash.linker.SwfIFrameLinker" />
+     <define-linker name="swfxs" class="com.ait.toolkit.flash.linker.SwfXSLinker" />
+        <define-linker name="swfsso" class="com.ait.toolkit.flash.linker.SwfSingleScriptLinker" />
+</module>
