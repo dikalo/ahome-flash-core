@@ -1,17 +1,17 @@
 /*
- Copyright (c) 2014 Ahomé Innovation Technologies. All rights reserved.
-
- Licensed under the Apache License, Version 2.0 (the "License");
- you may not use this file except in compliance with the License.
- You may obtain a copy of the License at
-
- http://www.apache.org/licenses/LICENSE-2.0
-
- Unless required by applicable law or agreed to in writing, software
- distributed under the License is distributed on an "AS IS" BASIS,
- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- See the License for the specific language governing permissions and
- limitations under the License.
+ * Copyright (c) 2014 Ahomé Innovation Technologies. All rights reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 package com.ait.toolkit.flash.core.client.assetloader;
 
@@ -75,105 +75,105 @@ import com.ait.toolkit.flash.core.client.utils.factories.ObjectFactory;
  */
 public class AssetLoader extends EventDispatcher {
 
-	public static final String WARNING_CANT_RECOGNIZE_FILE_TYPE = "LDR00";
-	public static final String WARNING_CANT_RECOGNIZE_LOADER_TYPE = "LDR01";
-	public static final String WARNING_FILE_NOT_FOUND = "LDR02";
-	public static final String WARNING_FILE_CANT_LOAD = "LDR03";
-	public static final String WARNING_CLASS_NOT_FOUND = "LDR04";
-	public static final String WARNING_SECURITY_BREACH = "LDR05";
-	public static final String WARNING_PARSE_ERROR = "LDR06";
-	public static final String WARNING_LOAD_TIMEOUT = "LDR07";
-	public static final String INFO_LOADER_ISSUE = "LDR08";
-	public static final String INFO_FILE_CLOSED = "LDR09";
-	public static final String DEBUG_FILE_REQUESTED = "LDR10";
-	public static final String DEBUG_FILE_LOADED = "LDR11";
-	public static final String DEBUG_BATCH_COMPLETE = "LDR12";
+    public static final String WARNING_CANT_RECOGNIZE_FILE_TYPE = "LDR00";
+    public static final String WARNING_CANT_RECOGNIZE_LOADER_TYPE = "LDR01";
+    public static final String WARNING_FILE_NOT_FOUND = "LDR02";
+    public static final String WARNING_FILE_CANT_LOAD = "LDR03";
+    public static final String WARNING_CLASS_NOT_FOUND = "LDR04";
+    public static final String WARNING_SECURITY_BREACH = "LDR05";
+    public static final String WARNING_PARSE_ERROR = "LDR06";
+    public static final String WARNING_LOAD_TIMEOUT = "LDR07";
+    public static final String INFO_LOADER_ISSUE = "LDR08";
+    public static final String INFO_FILE_CLOSED = "LDR09";
+    public static final String DEBUG_FILE_REQUESTED = "LDR10";
+    public static final String DEBUG_FILE_LOADED = "LDR11";
+    public static final String DEBUG_BATCH_COMPLETE = "LDR12";
 
-	private static final AssetLoader INSTANCE = new AssetLoader();
+    private static final AssetLoader INSTANCE = new AssetLoader();
 
-	// internal loader types
-	public static final String SWF = "swf"; // .swf Small Web Format/FlashDetect
+    // internal loader types
+    public static final String SWF = "swf"; // .swf Small Web Format/FlashDetect
 
-	public static final String IMAGE = "image"; // .bmp Bitmap image file format
-												// .png Portable Network
-												// Graphics
-												// .jpg, .jpeg Joint
-												// Photographic Experts Group
-												// .gif Graphics Interchange
-												// Format
+    public static final String IMAGE = "image"; // .bmp Bitmap image file format
+                                                // .png Portable Network
+                                                // Graphics
+                                                // .jpg, .jpeg Joint
+                                                // Photographic Experts Group
+                                                // .gif Graphics Interchange
+                                                // Format
 
-	public static final String SOUND = "sound"; // .aif, .aiff Audio Interchange
-												// File Format
-												// .mp3 MPEG-1 Audio Layer 3
-												// .wav Waveform audio format
+    public static final String SOUND = "sound"; // .aif, .aiff Audio Interchange
+                                                // File Format
+                                                // .mp3 MPEG-1 Audio Layer 3
+                                                // .wav Waveform audio format
 
-	public static final String ZIP = "zip"; // .zip "zip" (meaning "speed") data
-											// compression and archive format
+    public static final String ZIP = "zip"; // .zip "zip" (meaning "speed") data
+                                            // compression and archive format
 
-	public static final String DATA = "data"; // .html Hypertext Markup Language
-												// .txt, .text Text (ASCI) data
+    public static final String DATA = "data"; // .html Hypertext Markup Language
+                                              // .txt, .text Text (ASCI) data
 
-	public static final String XML = "xml"; // .xml Extensible Markup Language
+    public static final String XML = "xml"; // .xml Extensible Markup Language
 
-	public static final String BINARY = "binary"; // .bin Binary
+    public static final String BINARY = "binary"; // .bin Binary
 
-	public static final String VARIABLES = "variables"; // .var, .vars Url
-														// variables
+    public static final String VARIABLES = "variables"; // .var, .vars Url
+                                                        // variables
 
-	AssetLoader() {
-		jsObj = ObjectFactory.INSTANCE.createAssetLoader();
-	}
+    AssetLoader() {
+        jsObj = ObjectFactory.INSTANCE.createAssetLoader();
+    }
 
-	public static void loadXMLFile(String url, XmlFileLoadHandler handler) {
-		get()._loadFile(url, handler);
-	}
+    public static void loadXMLFile( String url, XmlFileLoadHandler handler ) {
+        get()._loadFile( url, handler );
+    }
 
-	public static void loadTextFile(String url, TextFileLoadHandler handler) {
-		get()._loadFile(url, handler);
-	}
+    public static void loadTextFile( String url, TextFileLoadHandler handler ) {
+        get()._loadFile( url, handler );
+    }
 
-	public static void loadImageFile(String url, ImageFileLoadHandler handler) {
-		get()._loadFile(url, handler);
-	}
+    public static void loadImageFile( String url, ImageFileLoadHandler handler ) {
+        get()._loadFile( url, handler );
+    }
 
-	public static void loadFile(String url, BinaryFileLoadHandler handler) {
-		get()._loadFile(url, handler);
-	}
+    public static void loadFile( String url, BinaryFileLoadHandler handler ) {
+        get()._loadFile( url, handler );
+    }
 
-	public static void whenDone(LoadDoneHandler handler) {
-		get()._whenDone(handler);
-	}
+    public static void whenDone( LoadDoneHandler handler ) {
+        get()._whenDone( handler );
+    }
 
-	public static void removeListener(String type, EventListener<?> listener) {
-		get().removeEventListener(type, listener);
-	}
+    public static void removeListener( String type, EventListener<?> listener ) {
+        get().removeEventListener( type, listener );
+    }
 
-	public static boolean hasListener(String type) {
-		return get().hasEventListener(type);
-	}
+    public static boolean hasListener( String type ) {
+        return get().hasEventListener( type );
+    }
 
-	public static void setTimeToRetry(int value) {
-		get()._setTimeToRetry(value);
-	}
+    public static void setTimeToRetry( int value ) {
+        get()._setTimeToRetry( value );
+    }
 
-	public static int getTimeToRetry() {
-		return get()._getTimeToRetry();
-	}
+    public static int getTimeToRetry() {
+        return get()._getTimeToRetry();
+    }
 
-	public static double getPercentDone() {
-		return get()._getPercentDone();
-	}
+    public static double getPercentDone() {
+        return get()._getPercentDone();
+    }
 
-	public static boolean isIdle() {
-		return get()._getIdle();
-	}
+    public static boolean isIdle() {
+        return get()._getIdle();
+    }
 
-	private static AssetLoader get() {
-		return INSTANCE;
-	}
+    private static AssetLoader get() {
+        return INSTANCE;
+    }
 
-	private final native void _loadFile(String fileUrl,
-			TextFileLoadHandler handler)/*-{
+    private final native void _loadFile( String fileUrl,
+            TextFileLoadHandler handler )/*-{
 		var peer = this.@com.ait.toolkit.core.client.JsObject::getJsObj()();
 		peer
 				.loadFile(
@@ -181,10 +181,10 @@ public class AssetLoader extends EventDispatcher {
 						function(content) {
 							return handler.@com.ait.toolkit.flash.core.client.assetloader.handlers.TextFileLoadHandler::onLoad(Ljava/lang/String;)(content);
 						});
-	}-*/;
+    }-*/;
 
-	private final native void _loadFile(String fileUrl,
-			ImageFileLoadHandler handler)/*-{
+    private final native void _loadFile( String fileUrl,
+            ImageFileLoadHandler handler )/*-{
 		var peer = this.@com.ait.toolkit.core.client.JsObject::getJsObj()();
 		peer
 				.loadFile(
@@ -193,10 +193,10 @@ public class AssetLoader extends EventDispatcher {
 							var bitmap = @com.ait.toolkit.flash.core.client.display.Bitmap::new(Lcom/google/gwt/core/client/JavaScriptObject;)(content);
 							return handler.@com.ait.toolkit.flash.core.client.assetloader.handlers.ImageFileLoadHandler::onLoad(Lcom/ait/toolkit/flash/core/client/display/Bitmap;)(bitmap);
 						});
-	}-*/;
+    }-*/;
 
-	private final native void _loadFile(String xmlFilePath,
-			XmlFileLoadHandler handler)/*-{
+    private final native void _loadFile( String xmlFilePath,
+            XmlFileLoadHandler handler )/*-{
 		var peer = this.@com.ait.toolkit.core.client.JsObject::getJsObj()();
 		peer
 				.loadFile(
@@ -205,10 +205,10 @@ public class AssetLoader extends EventDispatcher {
 							var xmlObject = @com.ait.toolkit.flash.core.client.toplevel.XML::new(Lcom/google/gwt/core/client/JavaScriptObject;)(xml);
 							return handler.@com.ait.toolkit.flash.core.client.assetloader.handlers.XmlFileLoadHandler::onLoad(Lcom/ait/toolkit/flash/core/client/toplevel/XML;)(xmlObject);
 						});
-	}-*/;
+    }-*/;
 
-	private final native void _loadFile(String filePath,
-			BinaryFileLoadHandler handler)/*-{
+    private final native void _loadFile( String filePath,
+            BinaryFileLoadHandler handler )/*-{
 		var peer = this.@com.ait.toolkit.core.client.JsObject::getJsObj()();
 		peer
 				.loadFile(
@@ -217,35 +217,35 @@ public class AssetLoader extends EventDispatcher {
 							var bytes = @com.ait.toolkit.flash.core.client.utils.ByteArray::new(Lcom/google/gwt/core/client/JavaScriptObject;)(content);
 							return handler.@com.ait.toolkit.flash.core.client.assetloader.handlers.BinaryFileLoadHandler::onLoad(Lcom/ait/toolkit/flash/core/client/utils/ByteArray;)(bytes);
 						});
-	}-*/;
+    }-*/;
 
-	private final native void _whenDone(LoadDoneHandler handler)/*-{
+    private final native void _whenDone( LoadDoneHandler handler )/*-{
 		var peer = this.@com.ait.toolkit.core.client.JsObject::getJsObj()();
 		peer
 				.whenDone(function(e) {
 					var eventObject = @com.ait.toolkit.flash.core.client.events.Event::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
 					handler.@com.ait.toolkit.flash.core.client.assetloader.handlers.LoadDoneHandler::onLoadDone(Lcom/ait/toolkit/flash/core/client/events/Event;)(eventObject);
 				});
-	}-*/;
+    }-*/;
 
-	private final native int _getTimeToRetry()/*-{
+    private final native int _getTimeToRetry()/*-{
 		var peer = this.@com.ait.toolkit.core.client.JsObject::getJsObj()();
 		return peer.gettimeToRetry();
-	}-*/;
+    }-*/;
 
-	private final native void _setTimeToRetry(int value)/*-{
+    private final native void _setTimeToRetry( int value )/*-{
 		var peer = this.@com.ait.toolkit.core.client.JsObject::getJsObj()();
 		peer.settimeToRetry(value);
-	}-*/;
+    }-*/;
 
-	private final native double _getPercentDone()/*-{
+    private final native double _getPercentDone()/*-{
 		var peer = this.@com.ait.toolkit.core.client.JsObject::getJsObj()();
 		return peer.getpercentDone();
-	}-*/;
+    }-*/;
 
-	private final native boolean _getIdle()/*-{
+    private final native boolean _getIdle()/*-{
 		var peer = this.@com.ait.toolkit.core.client.JsObject::getJsObj()();
 		return peer.getidle();
-	}-*/;
+    }-*/;
 
 }

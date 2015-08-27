@@ -5,8 +5,8 @@ import com.google.gwt.resources.client.ClientBundle;
 import com.google.gwt.resources.client.TextResource;
 
 public interface FlashDetectResources extends ClientBundle {
-	public static final FlashDetectResources INSTANCE = GWT.create(FlashDetectResources.class);
+    public static final FlashDetectResources INSTANCE = GWT.create( FlashDetectResources.class );
 
-	@Source("Detect_min.js")
-	TextResource js();
+    @Source( "Detect_min.js" )
+    TextResource js();
 }

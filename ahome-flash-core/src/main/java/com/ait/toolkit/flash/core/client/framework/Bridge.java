@@ -38,49 +38,50 @@ public class Bridge extends JavaScriptObject {
      * Gets the bridge instance
      */
     public static native Bridge get()/*-{
-                                     var bridgeName = @com.ait.toolkit.flash.core.client.framework.Bridge::bridgeName;
-                                     //$wnd.console.log(bridgeName);
-                                     return $wnd.FABridge[bridgeName] ? $wnd.FABridge[bridgeName]
-                                     : $wnd.FABridge["Flash4j"];
-                                     }-*/;
+		var bridgeName = @com.ait.toolkit.flash.core.client.framework.Bridge::bridgeName;
+		//$wnd.console.log(bridgeName);
+		return $wnd.FABridge[bridgeName]
+				? $wnd.FABridge[bridgeName]
+				: $wnd.FABridge["Flash4j"];
+    }-*/;
 
     public static native Bridge get( String bridgeName )/*-{
-                                                        @com.ait.toolkit.flash.core.client.framework.Bridge::bridgeName = bridgeName;
-                                                        return $wnd.FABridge[bridgeName];
-                                                        }-*/;
+		@com.ait.toolkit.flash.core.client.framework.Bridge::bridgeName = bridgeName;
+		return $wnd.FABridge[bridgeName];
+    }-*/;
 
     private final native JavaScriptObject create( String id ) /*-{
-                                                              //preventing from calling the constructor of DisplayObjectContainer
-                                                              //since it's an Abstract class
-                                                              if (id != "flash.display.DisplayObjectContainer") {
-                                                              try {
-                                                              var obj = this.create(id);
-                                                              return obj;
-                                                              } catch (e) {
-                                                              $wnd.console.log(e.message);
-                                                              }
-                                                              }
-                                                              return null;
-                                                              }-*/;
+		//preventing from calling the constructor of DisplayObjectContainer
+		//since it's an Abstract class
+		if (id != "flash.display.DisplayObjectContainer") {
+			try {
+				var obj = this.create(id);
+				return obj;
+			} catch (e) {
+				$wnd.console.log(e.message);
+			}
+		}
+		return null;
+    }-*/;
 
     public final native void addEventHandler( String id, String type, EventHandler handler )/*-{
-                                                                                            this
-                                                                                            .addEventListener(
-                                                                                            id,
-                                                                                            type,
-                                                                                            function(event) {
-                                                                                            var eventObject = @com.ait.toolkit.flash.core.client.events.Event::new(Lcom/google/gwt/core/client/JavaScriptObject;)(event);
-                                                                                            handler.@com.ait.toolkit.flash.core.client.events.handlers.EventHandler::onEvent(Lcom/ait/toolkit/flash/core/client/events/Event;)(eventObject);
-                                                                                            });
-                                                                                            }-*/;
+		this
+				.addEventListener(
+						id,
+						type,
+						function(event) {
+							var eventObject = @com.ait.toolkit.flash.core.client.events.Event::new(Lcom/google/gwt/core/client/JavaScriptObject;)(event);
+							handler.@com.ait.toolkit.flash.core.client.events.handlers.EventHandler::onEvent(Lcom/ait/toolkit/flash/core/client/events/Event;)(eventObject);
+						});
+    }-*/;
 
     private final native JavaScriptObject create( String id, JsArrayString args ) /*-{
-                                                                                  return this.create(id, args);
-                                                                                  }-*/;
+		return this.create(id, args);
+    }-*/;
 
     private final native JavaScriptObject create( String id, JsArray<JavaScriptObject> args ) /*-{
-                                                                                              return this.create(id, args);
-                                                                                              }-*/;
+		return this.create(id, args);
+    }-*/;
 
     /**
      * gets the class reference of the object with the given id
@@ -90,8 +91,8 @@ public class Bridge extends JavaScriptObject {
      * @return the java script object
      */
     public final native JavaScriptObject classRef( String id ) /*-{
-                                                               return this.classRef(id);
-                                                               }-*/;
+		return this.classRef(id);
+    }-*/;
 
     /**
      * Gets the root of the flash application
@@ -99,8 +100,8 @@ public class Bridge extends JavaScriptObject {
      * @return the root
      */
     public final native JavaScriptObject getRoot() /*-{
-                                                   return this.root();
-                                                   }-*/;
+		return this.root();
+    }-*/;
 
     /**
      * Creates a flash object with the given id
@@ -123,12 +124,12 @@ public class Bridge extends JavaScriptObject {
      * @return the string
      */
     public final native String debug( String id )/*-{
-                                                 $wnd.console.log('creating :  ' + id);
-                                                 var o = this.create(id);
-                                                 $wnd.console.log(o);
-                                                 for ( var v in o) {
-                                                 $wnd.console.log('- : ' + v);
-                                                 }
-                                                 }-*/;
+		$wnd.console.log('creating :  ' + id);
+		var o = this.create(id);
+		$wnd.console.log(o);
+		for ( var v in o) {
+			$wnd.console.log('- : ' + v);
+		}
+    }-*/;
 
 }
