@@ -1,4 +1,4 @@
-package com.ait.toolkit.flash.core.detect.resources;
+package com.ait.toolkit.flash.core.detect.client.resources;
 
 import com.google.gwt.core.shared.GWT;
 import com.google.gwt.resources.client.ClientBundle;

@@ -8,7 +8,7 @@ public interface FlashCoreResources extends ClientBundle {
 
     public static FlashCoreResources INSTANCE = GWT.create( FlashCoreResources.class );
 
-    @Source( "FaBridge.js" )
+    @Source( "FABridge.js" )
     public TextResource faBridge();
 
     @Source( "swfobject-2.0.js" )

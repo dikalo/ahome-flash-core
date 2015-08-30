@@ -17,18 +17,8 @@ package com.ait.toolkit.flash.core.client.framework;
 
 import java.util.Random;
 
-import com.ait.toolkit.core.client.Util;
-import com.ait.toolkit.flash.core.client.resources.FlashCoreResources;
-import com.ait.toolkit.flash.core.detect.resources.FlashDetectResources;
-
 public class Core {
     public static String BRIDGE_NAME = generateBridgeName();
-
-    static {
-        Util.injectJs( FlashDetectResources.INSTANCE.js() );
-        Util.injectJs( FlashCoreResources.INSTANCE.faBridge() );
-        Util.injectJs( FlashCoreResources.INSTANCE.swfObject() );
-    }
 
     /**
      * Generate and random bridge name
