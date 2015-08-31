@@ -31,4 +31,9 @@ public class BaseFontFactory extends JsObject {
 		return peer.getStaticValue(name);
     }-*/;
 
+    public final native boolean getStaticValueAsBoolean( String name )/*-{
+		var peer = this.@com.ait.toolkit.core.client.JsObject::getJsObj()();
+		return peer.getStaticValue(name);
+    }-*/;
+
 }
