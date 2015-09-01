@@ -2,6 +2,8 @@ package com.ait.toolkit.flash.purepdf.client.factories;
 
 import com.ait.toolkit.core.client.JsObject;
 import com.ait.toolkit.flash.core.client.framework.Bridge;
+import com.ait.toolkit.flash.purepdf.client.elements.Chunk;
+import com.ait.toolkit.flash.purepdf.client.elements.Phrase;
 import com.ait.toolkit.flash.purepdf.client.fonts.Font;
 import com.google.gwt.core.client.JavaScriptObject;
 
@@ -36,6 +38,73 @@ public class ElementsFactory extends JsObject {
     public final native JavaScriptObject createParagraph( String text )/*-{
 		var peer = this.@com.ait.toolkit.core.client.JsObject::getJsObj()();
 		return peer.createParagraph(text);
+    }-*/;
+
+    public final native JavaScriptObject createAnchor( String text, Font font )/*-{
+		var peer = this.@com.ait.toolkit.core.client.JsObject::getJsObj()();
+		return peer.createAnchor(text,
+				font.@com.ait.toolkit.core.client.JsObject::getJsObj()());
+    }-*/;
+
+    public final native JavaScriptObject createAnchor( String text )/*-{
+		var peer = this.@com.ait.toolkit.core.client.JsObject::getJsObj()();
+		return peer.createAnchor(text);
+    }-*/;
+
+    public final native JavaScriptObject createPhrase( String text, Font font, int leading )/*-{
+		var peer = this.@com.ait.toolkit.core.client.JsObject::getJsObj()();
+		return peer.createPhrase(text,
+				font.@com.ait.toolkit.core.client.JsObject::getJsObj()(),
+				leading);
+    }-*/;
+
+    public final native JavaScriptObject createPhrase( String text, Font font )/*-{
+		var peer = this.@com.ait.toolkit.core.client.JsObject::getJsObj()();
+		return peer.createPhrase(text,
+				font.@com.ait.toolkit.core.client.JsObject::getJsObj()());
+    }-*/;
+
+    public final native JavaScriptObject createPhrase( String text )/*-{
+		var peer = this.@com.ait.toolkit.core.client.JsObject::getJsObj()();
+		return peer.createPhrase(text);
+    }-*/;
+
+    public final native JavaScriptObject phraseFromChunk( Chunk value )/*-{
+		var peer = this.@com.ait.toolkit.core.client.JsObject::getJsObj()();
+		return peer
+				.phraseFromChunk(value.@com.ait.toolkit.core.client.JsObject::getJsObj()());
+    }-*/;
+
+    public final native JavaScriptObject anchorFromChunk( Chunk value )/*-{
+		var peer = this.@com.ait.toolkit.core.client.JsObject::getJsObj()();
+		return peer
+				.anchorFromChunk(value.@com.ait.toolkit.core.client.JsObject::getJsObj()());
+    }-*/;
+
+    public final native JavaScriptObject anchorFromPhrase( Phrase value )/*-{
+		var peer = this.@com.ait.toolkit.core.client.JsObject::getJsObj()();
+		return peer
+				.anchorFromPhrase(value.@com.ait.toolkit.core.client.JsObject::getJsObj()());
+    }-*/;
+
+    public final native JavaScriptObject createNamedAnnotation( int value )/*-{
+		var peer = this.@com.ait.toolkit.core.client.JsObject::getJsObj()();
+		return peer.createNamedAnnotation(value);
+    }-*/;
+
+    public final native JavaScriptObject createUrlAnnotation( String value )/*-{
+		var peer = this.@com.ait.toolkit.core.client.JsObject::getJsObj()();
+		return peer.createUrlAnnotation(value);
+    }-*/;
+
+    public final native JavaScriptObject createStringAnnotation( String title, String content )/*-{
+		var peer = this.@com.ait.toolkit.core.client.JsObject::getJsObj()();
+		return peer.createStringAnnotation(title, content);
+    }-*/;
+
+    public final native JavaScriptObject createScreenAnnotation( String moviePath, String mimeType, boolean showOnDisplay )/*-{
+		var peer = this.@com.ait.toolkit.core.client.JsObject::getJsObj()();
+		return peer.createScreenAnnotation(moviePath, mimeType, showOnDisplay);
     }-*/;
 
 }

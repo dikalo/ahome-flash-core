@@ -5,41 +5,31 @@ import com.ait.toolkit.flash.purepdf.client.factories.ElementsFactory;
 import com.ait.toolkit.flash.purepdf.client.fonts.Font;
 import com.google.gwt.core.client.JavaScriptObject;
 
-public class Phrase extends JsObject {
+public class Chunk extends JsObject {
 
-    protected Phrase() {
+    protected Chunk() {
 
     }
 
-    protected Phrase( JavaScriptObject peer ) {
+    protected Chunk( JavaScriptObject peer ) {
         jsObj = peer;
     }
 
-    public Phrase( String text, Font font, int leading ) {
+    public Chunk( String text, Font font, int leading ) {
         jsObj = ElementsFactory.INSTANCE.createPhrase( text, font, leading );
     }
 
-    public Phrase( String text, Font font ) {
+    public Chunk( String text, Font font ) {
         jsObj = ElementsFactory.INSTANCE.createPhrase( text, font );
     }
 
-    public Phrase( String text ) {
+    public Chunk( String text ) {
         jsObj = ElementsFactory.INSTANCE.createPhrase( text );
     }
 
-    public static Phrase fromChunk( Chunk chunk ) {
-        return new Phrase( ElementsFactory.INSTANCE.phraseFromChunk( chunk ) );
-    }
-
-    public native void add( Phrase value )/*-{
+    public native void add( Chunk value )/*-{
 		var peer = this.@com.ait.toolkit.core.client.JsObject::getJsObj()();
 		peer.add(value.@com.ait.toolkit.core.client.JsObject::getJsObj()());
-    }-*/;
-
-    public native void addChunk( Chunk value )/*-{
-		var peer = this.@com.ait.toolkit.core.client.JsObject::getJsObj()();
-		peer
-				.addChunk(value.@com.ait.toolkit.core.client.JsObject::getJsObj()());
     }-*/;
 
 }

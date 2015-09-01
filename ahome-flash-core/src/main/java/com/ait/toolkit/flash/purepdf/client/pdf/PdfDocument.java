@@ -1,7 +1,6 @@
 package com.ait.toolkit.flash.purepdf.client.pdf;
 
 import com.ait.toolkit.core.client.JsObject;
-import com.ait.toolkit.flash.purepdf.client.elements.Paragraph;
 import com.google.gwt.core.client.JavaScriptObject;
 
 public class PdfDocument extends JsObject {
@@ -48,11 +47,6 @@ public class PdfDocument extends JsObject {
     public final native void close()/*-{
 		var peer = this.@com.ait.toolkit.core.client.JsObject::getJsObj()();
 		peer.close();
-    }-*/;
-
-    public final native void add( Paragraph value )/*-{
-		var peer = this.@com.ait.toolkit.core.client.JsObject::getJsObj()();
-		peer.add(value.@com.ait.toolkit.core.client.JsObject::getJsObj()());
     }-*/;
 
 }
