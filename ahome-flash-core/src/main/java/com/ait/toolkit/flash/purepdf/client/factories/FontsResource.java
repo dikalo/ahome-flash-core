@@ -29,6 +29,11 @@ public class FontsResource extends JsObject {
 				baseFont.@com.ait.toolkit.core.client.JsObject::getJsObj()());
     }-*/;
 
+    public final native JavaScriptObject createFont()/*-{
+		var peer = this.@com.ait.toolkit.core.client.JsObject::getJsObj()();
+		return peer.createFont();
+    }-*/;
+
     public final native JavaScriptObject createGrayColor( int gray )/*-{
 		var peer = this.@com.ait.toolkit.core.client.JsObject::getJsObj()();
 		return peer.createGrayColor(gray);

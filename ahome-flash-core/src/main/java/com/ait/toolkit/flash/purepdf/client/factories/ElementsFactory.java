@@ -156,4 +156,30 @@ public class ElementsFactory extends JsObject {
 						offsetX, offsetY);
     }-*/;
 
+    public final native JavaScriptObject createHeaderFooter( Phrase before, Phrase after, boolean numbered )/*-{
+		var peer = this.@com.ait.toolkit.core.client.JsObject::getJsObj()();
+		return peer.createHeaderFooter(
+				before.@com.ait.toolkit.core.client.JsObject::getJsObj()(),
+				after.@com.ait.toolkit.core.client.JsObject::getJsObj()(),
+				numbered);
+    }-*/;
+
+    public final native JavaScriptObject createHeaderFooter( Phrase before, Phrase after )/*-{
+		var peer = this.@com.ait.toolkit.core.client.JsObject::getJsObj()();
+		return peer.createHeaderFooter(
+				before.@com.ait.toolkit.core.client.JsObject::getJsObj()(),
+				after.@com.ait.toolkit.core.client.JsObject::getJsObj()());
+    }-*/;
+
+    public final native JavaScriptObject createHeaderFooter( Phrase before )/*-{
+		var peer = this.@com.ait.toolkit.core.client.JsObject::getJsObj()();
+		return peer
+				.createHeaderFooter(before.@com.ait.toolkit.core.client.JsObject::getJsObj()());
+    }-*/;
+
+    public final native JavaScriptObject createList( boolean numbered, int symbolIndent )/*-{
+		var peer = this.@com.ait.toolkit.core.client.JsObject::getJsObj()();
+		return peer.createList(numbered, symbolIndent);
+    }-*/;
+
 }

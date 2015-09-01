@@ -11,6 +11,8 @@ import com.google.gwt.core.client.JavaScriptObject;
 
 public class Chunk extends JsObject {
 
+    public static final Chunk NEW_LINE = new Chunk( "\n", new Font() );
+
     protected Chunk() {
 
     }

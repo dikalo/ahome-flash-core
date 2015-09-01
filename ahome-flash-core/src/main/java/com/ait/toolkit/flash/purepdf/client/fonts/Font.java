@@ -15,6 +15,10 @@ public class Font extends JsObject {
         jsObj = FontsResource.INSTANCE.createFont( familly, size, style, color, baseFont );
     }
 
+    public Font() {
+        jsObj = FontsResource.INSTANCE.createFont();
+    }
+
     public final native Font difference( Font value )/*-{
 		var peer = this.@com.ait.toolkit.core.client.JsObject::getJsObj()();
 		var o = peer
