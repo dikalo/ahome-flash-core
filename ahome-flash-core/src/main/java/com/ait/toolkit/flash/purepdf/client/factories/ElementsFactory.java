@@ -229,4 +229,14 @@ public class ElementsFactory extends JsObject {
 				.createParagraphFromChunk(value.@com.ait.toolkit.core.client.JsObject::getJsObj()());
     }-*/;
 
+    public final native JavaScriptObject createGreekList( int symbolIndent )/*-{
+		var peer = this.@com.ait.toolkit.core.client.JsObject::getJsObj()();
+		return peer.createGreekList(symbolIndent);
+    }-*/;
+
+    public final native JavaScriptObject createRomanList( int symbolIndent )/*-{
+		var peer = this.@com.ait.toolkit.core.client.JsObject::getJsObj()();
+		return peer.createRomanList(symbolIndent);
+    }-*/;
+
 }
