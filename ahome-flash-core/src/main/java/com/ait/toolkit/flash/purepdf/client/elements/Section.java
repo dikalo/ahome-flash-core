@@ -6,6 +6,10 @@ import com.google.gwt.core.client.JavaScriptObject;
 
 public class Section extends JsObject {
 
+    public static final int NUMBERSTYLE_NONE = -1;
+    public static final int NUMBERSTYLE_DOTTED = 0;
+    public static final int NUMBERSTYLE_DOTTED_WITHOUT_FINAL_DOT = 1;
+
     protected Section() {
 
     }
