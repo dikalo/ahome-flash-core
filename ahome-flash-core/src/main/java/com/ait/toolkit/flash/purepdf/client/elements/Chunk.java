@@ -9,7 +9,7 @@ import com.ait.toolkit.flash.purepdf.client.pdf.PdfAction;
 import com.ait.toolkit.flash.purepdf.client.pdf.PdfAnnotation;
 import com.google.gwt.core.client.JavaScriptObject;
 
-public class Chunk extends JsObject {
+public class Chunk extends JsObject implements IElement {
 
     public static final Chunk NEW_LINE = new Chunk( "\n", new Font() );
 
@@ -214,5 +214,10 @@ public class Chunk extends JsObject {
 				thickNess, thickNessMul, yPosition, yPositionMul, cap);
 		return this;
     }-*/;
+
+    @Override
+    public JavaScriptObject asElement() {
+        return this.getJsObj();
+    }
 
 }

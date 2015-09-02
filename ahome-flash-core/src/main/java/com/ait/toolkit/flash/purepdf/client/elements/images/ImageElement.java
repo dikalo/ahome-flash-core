@@ -12,4 +12,5 @@ public class ImageElement extends RectangleElement {
     protected ImageElement( JavaScriptObject peer ) {
         jsObj = peer;
     }
+
 }

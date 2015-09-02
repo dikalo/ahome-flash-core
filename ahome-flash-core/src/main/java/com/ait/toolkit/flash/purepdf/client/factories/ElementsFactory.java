@@ -5,6 +5,7 @@ import com.ait.toolkit.flash.core.client.framework.Bridge;
 import com.ait.toolkit.flash.purepdf.client.elements.Chunk;
 import com.ait.toolkit.flash.purepdf.client.elements.Paragraph;
 import com.ait.toolkit.flash.purepdf.client.elements.Phrase;
+import com.ait.toolkit.flash.purepdf.client.elements.Section;
 import com.ait.toolkit.flash.purepdf.client.elements.images.ImageElement;
 import com.ait.toolkit.flash.purepdf.client.fonts.Font;
 import com.google.gwt.core.client.JavaScriptObject;
@@ -180,6 +181,52 @@ public class ElementsFactory extends JsObject {
     public final native JavaScriptObject createList( boolean numbered, int symbolIndent )/*-{
 		var peer = this.@com.ait.toolkit.core.client.JsObject::getJsObj()();
 		return peer.createList(numbered, symbolIndent);
+    }-*/;
+
+    public final native JavaScriptObject createListItem( String text, Font font )/*-{
+		var peer = this.@com.ait.toolkit.core.client.JsObject::getJsObj()();
+		return peer.createListItem(text,
+				font.@com.ait.toolkit.core.client.JsObject::getJsObj()());
+    }-*/;
+
+    public final native JavaScriptObject createListItem( String text )/*-{
+		var peer = this.@com.ait.toolkit.core.client.JsObject::getJsObj()();
+		return peer.createListItem(text);
+    }-*/;
+
+    public final native JavaScriptObject createListItemFromChunk( Chunk chunk )/*-{
+		var peer = this.@com.ait.toolkit.core.client.JsObject::getJsObj()();
+		return peer
+				.createListItemFromChunk(chunk.@com.ait.toolkit.core.client.JsObject::getJsObj()());
+    }-*/;
+
+    public final native JavaScriptObject createListItemFromPhrase( Phrase phrase )/*-{
+		var peer = this.@com.ait.toolkit.core.client.JsObject::getJsObj()();
+		return peer
+				.createListItemFromPhrase(phrase.@com.ait.toolkit.core.client.JsObject::getJsObj()());
+    }-*/;
+
+    public final native JavaScriptObject createMarkedSection( Section section )/*-{
+		var peer = this.@com.ait.toolkit.core.client.JsObject::getJsObj()();
+		return peer
+				.createMarkedSection(section.@com.ait.toolkit.core.client.JsObject::getJsObj()());
+    }-*/;
+
+    public final native JavaScriptObject createMultiColumnText()/*-{
+		var peer = this.@com.ait.toolkit.core.client.JsObject::getJsObj()();
+		return peer.createMultiColumnText();
+    }-*/;
+
+    public final native JavaScriptObject createParagraphFromPhrase( Phrase value )/*-{
+		var peer = this.@com.ait.toolkit.core.client.JsObject::getJsObj()();
+		return peer
+				.createParagraphFromPhrase(value.@com.ait.toolkit.core.client.JsObject::getJsObj()());
+    }-*/;
+
+    public final native JavaScriptObject createParagraphFromChunk( Chunk value )/*-{
+		var peer = this.@com.ait.toolkit.core.client.JsObject::getJsObj()();
+		return peer
+				.createParagraphFromChunk(value.@com.ait.toolkit.core.client.JsObject::getJsObj()());
     }-*/;
 
 }

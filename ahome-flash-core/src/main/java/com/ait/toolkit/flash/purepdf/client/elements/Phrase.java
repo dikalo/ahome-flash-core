@@ -7,6 +7,8 @@ import com.google.gwt.core.client.JavaScriptObject;
 
 public class Phrase extends JsObject {
 
+    public static final int DEFAULT_LEADING = 16;
+
     protected Phrase() {
 
     }
@@ -40,6 +42,11 @@ public class Phrase extends JsObject {
 		var peer = this.@com.ait.toolkit.core.client.JsObject::getJsObj()();
 		peer
 				.addChunk(value.@com.ait.toolkit.core.client.JsObject::getJsObj()());
+    }-*/;
+
+    public native void add( Chunk value )/*-{
+		var peer = this.@com.ait.toolkit.core.client.JsObject::getJsObj()();
+		peer.add(value.@com.ait.toolkit.core.client.JsObject::getJsObj()());
     }-*/;
 
 }

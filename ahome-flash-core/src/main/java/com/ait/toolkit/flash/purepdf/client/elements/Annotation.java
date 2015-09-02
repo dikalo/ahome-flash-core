@@ -4,7 +4,7 @@ import com.ait.toolkit.core.client.JsObject;
 import com.ait.toolkit.flash.purepdf.client.factories.ElementsFactory;
 import com.google.gwt.core.client.JavaScriptObject;
 
-public class Annotation extends JsObject {
+public class Annotation extends JsObject implements IElement {
 
     protected Annotation() {
 
@@ -34,5 +34,10 @@ public class Annotation extends JsObject {
 		var peer = this.@com.ait.toolkit.core.client.JsObject::getJsObj()();
 		peer.setDimensions(llx, ly, urx, ury);
     }-*/;
+
+    @Override
+    public JavaScriptObject asElement() {
+        return this.getJsObj();
+    }
 
 }
